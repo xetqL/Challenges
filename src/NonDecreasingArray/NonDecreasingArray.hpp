@@ -17,6 +17,7 @@ template <typename T> std::ostream& operator<<(std::ostream& os, const std::vect
     }
     return os;
 }
+
 struct NonDecreasingArray {
     static bool checkPossibility(std::vector<int>& x) {
         uint8_t nChanged = 0;
@@ -42,7 +43,9 @@ struct NonDecreasingArray {
     }
     static void run() {
         std::vector<std::vector<int>> test_cases =
-                {{1,2,3,4}, {4,3,2,1}, {-1,4,2,3}, {4,5,3,1}, {4,5,3,1}, {5,7,1,8}, {12,8,15,11,13,14}};
+                {{1,2,3,4},
+                 {4,3,2,1},
+                 {-1,4,2,3}, {4,5,3,1}, {4,5,3,1}, {5,7,1,8}, {12,8,15,11,13,14}};
         std::vector<bool> solutions = {true,false,true,false,false,true,false};
         for(auto i = 0; i < test_cases.size(); ++i)
             assert(checkPossibility(test_cases[i]) == solutions[i]);
